@@ -1,6 +1,6 @@
 module delivery-backend
 
-go 1.22rc1
+go 1.21
 
 require (
 	github.com/bytedance/sonic v1.10.2 // indirect

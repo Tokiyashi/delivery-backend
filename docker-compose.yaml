@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  core-app:
+    build: ./
+    command: /main
+    ports:
+      - 8080:8080
+    depends_on:
+      - db_auth
+    environment:
+      - "POSTGRES_CONNECTION_STRING=host=db_auth user=nikita password=5434 dbname=food port=5432 sslmode=disable"
+  db_auth:
+    restart: always
+    container_name: db_auth
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_PASSWORD=5434"
+      - "POSTGRES_USER=nikita"
+    image: postgres:16.1-alpine
