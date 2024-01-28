@@ -6,14 +6,6 @@ import (
 	"gorm.io/gorm"
 )
 
-const (
-	host     = "localhost"
-	port     = 5432
-	user     = "nikita"
-	password = "5434"
-	dbname   = "food"
-)
-
 var DB *gorm.DB
 
 func ConnectToDB() {
